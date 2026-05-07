@@ -4,6 +4,14 @@
 set -u
 input=$(cat)
 
+# Cache the raw stdin JSON for external consumers (e.g. the VS Code extension
+# at github.com/.../vscode-claude-statusline). Best-effort: failures here must
+# not break status-line rendering.
+{
+  mkdir -p "${HOME}/.claude" \
+    && printf '%s' "$input" > "${HOME}/.claude/.statusline-cache.json"
+} 2>/dev/null || true
+
 # Colors (disabled when NO_COLOR is set, per https://no-color.org/)
 if [[ -z "${NO_COLOR:-}" ]]; then
   R=$'\033[0m'; B=$'\033[1m'; D=$'\033[2m'
