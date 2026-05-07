@@ -33,8 +33,8 @@ Set `NO_COLOR=1` (per [no-color.org](https://no-color.org/)) to disable.
 On a new host:
 
 ```sh
-git clone <this-repo> ~/r/gagar1n/claude-prompt   # or copy by any means
-~/r/gagar1n/claude-prompt/install.sh
+git clone https://github.com/gagar1n/claude-prompt.git
+cd claude-prompt && ./install.sh
 ```
 
 The installer:
