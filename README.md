@@ -18,6 +18,16 @@ The 5h / 7d entries are omitted when Claude Code does not provide them
 (e.g. on plans that don't surface those limits, or before the first API
 response of the session).
 
+Output is coloured:
+
+- **Model** — bold cyan
+- **Effort** — green (low) · yellow (medium) · magenta (high / xhigh / max)
+- **Limits & context %** — green (<50%) · yellow (50–79%) · red (≥80%)
+- **Labels & ETAs** — dim
+- **Separators** — dim grey
+
+Set `NO_COLOR=1` (per [no-color.org](https://no-color.org/)) to disable.
+
 ## Install
 
 On a new host:
